@@ -14,7 +14,7 @@ namespace PascalCodeStats
             Console.BufferWidth = 110;
             Console.WindowHeight = 50;
 
-            Console.WriteLine("Pastat v1.0 (23.01.2021)  <Cheery Programmer. medulla_261@mail.ru>");
+            Console.WriteLine("Pastat v1.1 (23.01.2021)  <Cheery Programmer. medulla_261@mail.ru>");
             Console.WriteLine("Special for Simple Game Engine");
 
             string currentDir = Directory.GetCurrentDirectory();
@@ -22,9 +22,17 @@ namespace PascalCodeStats
 
             if (filePaths.Length > 0)
             {
+                string tableline =      $"------------+---------+--------------+-----------+--------+--------------------------------------------------";
+                string tablehead =      $"Строки      | Код     | Комментарии  | Директивы | Пустые | Имя файла";
+                string tableheadtotal = $"Cтрок       | Кода    | Комментариев | Директив  | Пустых | Файлов";
+
+                //Таблица
                 Console.WriteLine();
-                Console.WriteLine($"Всего строк | Код     | Комментарии | Директивы | Пустых | Имя файла");
-                Console.WriteLine($"------------+---------+-------------+-----------+--------+---------------------------------------------------");
+                Console.WriteLine();
+                Console.WriteLine("                                                    Файлы:");
+                Console.WriteLine(tableline);
+                Console.WriteLine(tablehead);
+                Console.WriteLine(tableline);
                 FileScanner scanner = new FileScanner();
                 TotalStatsCollector statsCollector = new TotalStatsCollector();
                 foreach (string filePath in filePaths)
@@ -33,18 +41,26 @@ namespace PascalCodeStats
                     statsCollector.Add(stats);
                     Console.WriteLine(ReadStatsLine(stats));
                 }
+                Console.WriteLine(tableline);
 
-                Console.WriteLine($"------------+---------+-------------+-----------+--------+---------------------------------------------------");
+                //Итого
                 Console.WriteLine();
-                Console.WriteLine($"Всего в ({filePaths.Length}) файлах:");
-                Console.WriteLine($"  Строк      : {statsCollector.TotalLines}");
-                Console.WriteLine($"  Код        : {statsCollector.CodeCount}");
-                Console.WriteLine($"  Комментарии: {statsCollector.CommentsCount}");
-                Console.WriteLine($"  Директивы  : {statsCollector.DirectivesCount}");
-                Console.WriteLine($"  Пустых     : {statsCollector.EmptyLinesCount}");
+                Console.WriteLine();
+                Console.WriteLine("                                                    Всего:");
+                Console.WriteLine(tableline);
+                Console.WriteLine(tableheadtotal);
+                Console.WriteLine(tableline);
+                Console.WriteLine($"{statsCollector.TotalLines, -12}" +
+                                  $"| {statsCollector.CodeCount, -9}" +
+                                  $"| {statsCollector.CommentsCount, -12}" +
+                                  $"| {statsCollector.DirectivesCount, -10}" +
+                                  $"| {statsCollector.EmptyLinesCount, -7}" +
+                                  $"| {filePaths.Length}");
+                Console.WriteLine(tableline);
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("файлов не найдено");
             }
 
@@ -54,7 +70,7 @@ namespace PascalCodeStats
 		private static string ReadStatsLine(FileStats stats)
 		{
 			return $"{stats.TotalLines, -12}" +
-				$"| {stats.CodeCount, -8}" +
+				$"| {stats.CodeCount, -9}" +
 				$"| {stats.CommentsCount, -12}" +
 				$"| {stats.DirectivesCount, -10}" +
                 $"| {stats.EmptyLinesCount, -7}" +
@@ -86,3 +102,4 @@ namespace PascalCodeStats
 
     }
 }
+
