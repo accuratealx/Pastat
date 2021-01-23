@@ -14,7 +14,7 @@ namespace PascalCodeStats
             Console.BufferWidth = 110;
             Console.WindowHeight = 50;
 
-            Console.WriteLine("Pastat v1.1 (23.01.2021)  <Cheery Programmer. medulla_261@mail.ru>");
+            Console.WriteLine("Pastat v1.1 23.01.2021  [Cheery Programmer   medulla_261@mail.ru]");
             Console.WriteLine("Special for Simple Game Engine");
 
             string currentDir = Directory.GetCurrentDirectory();
@@ -29,7 +29,6 @@ namespace PascalCodeStats
                 //Таблица
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("                                                    Файлы:");
                 Console.WriteLine(tableline);
                 Console.WriteLine(tablehead);
                 Console.WriteLine(tableline);
