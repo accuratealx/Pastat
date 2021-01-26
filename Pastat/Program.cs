@@ -50,8 +50,8 @@ namespace PascalCodeStats
                 Console.WriteLine(tableheadtotal);
                 Console.WriteLine(tableline);
                 Console.WriteLine($"{statsCollector.TotalLines, -12}" +
-                                  $"| {statsCollector.CodeCount, -9}" +
-                                  $"| {statsCollector.CommentsCount, -12}" +
+                                  $"| {statsCollector.CodeCount, -8}" +
+                                  $"| {statsCollector.CommentsCount, -13}" +
                                   $"| {statsCollector.DirectivesCount, -10}" +
                                   $"| {statsCollector.EmptyLinesCount, -7}" +
                                   $"| {filePaths.Length}");
@@ -69,8 +69,8 @@ namespace PascalCodeStats
 		private static string ReadStatsLine(FileStats stats)
 		{
 			return $"{stats.TotalLines, -12}" +
-				$"| {stats.CodeCount, -9}" +
-				$"| {stats.CommentsCount, -12}" +
+				$"| {stats.CodeCount, -8}" +
+				$"| {stats.CommentsCount, -13}" +
 				$"| {stats.DirectivesCount, -10}" +
                 $"| {stats.EmptyLinesCount, -7}" +
                 $"| {Path.GetFileName(stats.FullPath)}";
