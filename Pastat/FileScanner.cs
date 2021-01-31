@@ -2,7 +2,7 @@
 
 namespace PascalCodeStats
 {
-	class FileScanner
+	partial class FileScanner
 	{
 		public FileStats Scan(string path)
 		{
@@ -183,18 +183,6 @@ namespace PascalCodeStats
 				}
 
 			return false;
-		}
-
-
-
-		private enum ScanState
-		{
-			None,
-			Code,
-			CompilerDirectiveCurly,
-			CompilerDirectiveNonCurly,
-			CommentCurly,
-			CommentNonCurly,
 		}
 	}
 }
