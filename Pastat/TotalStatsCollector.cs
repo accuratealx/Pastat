@@ -1,6 +1,8 @@
-﻿namespace PascalCodeStats
+﻿using Pastat.Reporting;
+
+namespace PascalCodeStats
 {
-	internal class TotalStatsCollector
+	internal class TotalStatsCollector: IStatsCollector
 	{
 		public int TotalLines { get; private set; }
 		public int CodeCount { get; private set; }

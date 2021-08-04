@@ -70,6 +70,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\History.cs" />
+    <Compile Include="Reporting\IStatsCollector.cs" />
     <Compile Include="ScanState.cs" />
     <Compile Include="TokenType.cs" />
     <Compile Include="TotalStatsCollector.cs" />

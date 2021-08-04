@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pastat.Reporting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -60,6 +61,12 @@ namespace PascalCodeStats
 								  $"| {statsCollector.EmptyLinesCount,-7}" +
 								  $"| {filePaths.Length}");
 				Console.WriteLine(tableline);
+
+				//Сохранение в истории
+				using(var history = History.Load())
+                {
+					history.Append(statsCollector, filePaths.Length);
+                }
 			}
 			else
 			{
