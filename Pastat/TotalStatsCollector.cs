@@ -1,4 +1,4 @@
-﻿using Pastat.Reporting;
+﻿using PascalCodeStats.Reporting;
 
 namespace PascalCodeStats
 {

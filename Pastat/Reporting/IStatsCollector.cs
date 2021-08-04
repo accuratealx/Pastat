@@ -1,6 +1,6 @@
-﻿namespace Pastat.Reporting
+﻿namespace PascalCodeStats.Reporting
 {
-    interface IStatsCollector
+	public interface IStatsCollector
 	{
 		int TotalLines { get; }
 		int CodeCount { get; }
