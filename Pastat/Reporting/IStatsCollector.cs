@@ -1,4 +1,4 @@
-﻿namespace PascalCodeStats.Reporting
+﻿namespace Pastat.Reporting
 {
 	public interface IStatsCollector
 	{

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,6 +71,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\Diagram\CoordinatesTranslator.cs" />
+    <Compile Include="Reporting\Diagram\CoordinatesTranslator.Sequence.cs" />
+    <Compile Include="Reporting\Diagram\Graph.cs" />
+    <Compile Include="Reporting\Diagram\GraphData.cs" />
+    <Compile Include="Reporting\Diagram\ITranslator.cs" />
+    <Compile Include="Reporting\Diagram\PointL.cs" />
+    <Compile Include="Reporting\Diagram\Series.cs" />
+    <Compile Include="Reporting\Diagram\XValue.cs" />
     <Compile Include="Reporting\History.cs" />
     <Compile Include="Reporting\IStatsCollector.cs" />
     <Compile Include="ScanState.cs" />

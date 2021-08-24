@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PascalCodeStats
+namespace Pastat
 {
 	class FileStats
 	{

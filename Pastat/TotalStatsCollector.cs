@@ -1,6 +1,6 @@
-﻿using PascalCodeStats.Reporting;
+﻿using Pastat.Reporting;
 
-namespace PascalCodeStats
+namespace Pastat
 {
 	internal class TotalStatsCollector: IStatsCollector
 	{

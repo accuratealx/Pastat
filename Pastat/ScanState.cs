@@ -1,4 +1,4 @@
-﻿namespace PascalCodeStats
+﻿namespace Pastat
 {
 	partial class FileScanner
 	{
